@@ -1,16 +1,15 @@
-import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
 
 const app = express();
 
-dotenv.config();
+const PORT = 8080;
 
-const PORT = process.env.PORT;
+const mongoURL = `mongodb+srv://plantWizard:3OjavOefOZo1yteX@cluster0.enqs6.mongodb.net/plant-subscription?retryWrites=true&w=majority`;
 
 const connectDatabase = async () => {
     try {
-        const connection = await mongoose.connect(process.env.MONGO_URL);
+        const connection = await mongoose.connect(mongoURL);
         console.log('Mongo db connected');
     } catch (error) {
         console.log(`Error:${error.message}`);
@@ -20,4 +19,4 @@ const connectDatabase = async () => {
 
 connectDatabase();
 
-app.listen(PORT, console.log(`Server is up and running, ${PORT}`));
+app.listen(PORT, console.log(`Server is up and running`));
