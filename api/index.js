@@ -1,11 +1,15 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import express from 'express';
 import mongoose from 'mongoose';
+import userRoute from './routes/userRoutes.js';
 
 const app = express();
+app.use(express.json());
 
-const PORT = 8080;
+const PORT = process.env.PORT;
 
-const mongoURL = `mongodb+srv://plantWizard:3OjavOefOZo1yteX@cluster0.enqs6.mongodb.net/plant-subscription?retryWrites=true&w=majority`;
+const mongoURL = process.env.MONGO_URL;
 
 const connectDatabase = async () => {
     try {
@@ -16,7 +20,8 @@ const connectDatabase = async () => {
         process.exit(1);
     }
 };
-
 connectDatabase();
+
+app.use("/user", userRoute)
 
 app.listen(PORT, console.log(`Server is up and running`));
