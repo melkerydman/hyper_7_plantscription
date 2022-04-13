@@ -2,7 +2,13 @@ import dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
 import mongoose from 'mongoose';
-import authRoutes from './routes/authRoutes.js';
+import {
+    authRoutes,
+    cartRoutes,
+    productRoutes,
+    orderRoutes,
+    userRoutes,
+} from './routes';
 
 const app = express();
 app.use(express.json());
@@ -22,6 +28,10 @@ const connectDatabase = async () => {
 };
 connectDatabase();
 
-app.use('/user', authRoutes);
+app.use('/users', authRoutes);
+app.use('/users', userRoutes);
+app.use('/carts', cartRoutes);
+app.use('/products', productRoutes);
+app.use('/orders', orderRoutes);
 
 app.listen(PORT, console.log(`Server is up and running`));
