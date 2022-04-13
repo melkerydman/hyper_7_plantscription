@@ -3,9 +3,11 @@ POST http://localhost:8080/user
 Content-Type: application/json
 
 {
-    "username": "Jao",
-    "email": "blablab@gmail.com",
+    "username": "Alex",
+    "email": "alex@gmail.com",
     "password": "test123"
 }
+
+
 ###GET request to the DB
 GET http://localhost:8080/test

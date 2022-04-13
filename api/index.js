@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
 import mongoose from 'mongoose';
-import userRoute from './routes/userRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 const app = express();
 app.use(express.json());
@@ -22,6 +22,6 @@ const connectDatabase = async () => {
 };
 connectDatabase();
 
-app.use("/user", userRoute)
+app.use("/user", userRoutes)
 
 app.listen(PORT, console.log(`Server is up and running`));
