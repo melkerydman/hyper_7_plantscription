@@ -8,7 +8,7 @@ import {
     productRoutes,
     orderRoutes,
     userRoutes,
-} from './routes';
+} from './routes/index.js';
 
 const app = express();
 app.use(express.json());
