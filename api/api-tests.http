@@ -8,6 +8,21 @@ Content-Type: application/json
     "password": "test123"
 }
 
+### Push a new product to the DB
+POST http://localhost:8080/products
+Content-Type: application/json
 
-###GET request to the DB
-GET http://localhost:8080/test
+{
+    "title": "New flower",
+    "desc": "A flower that shall pass like us at hyper",
+    "img": "www.google.com",
+    "cat": [],
+    "price": 1
+}
+
+### GET ONE PRODUCT
+GET http://localhost:8080/products/6257ea5c4dabb30c8ac49069
+
+
+### GET All PRODCUTS
+GET http://localhost:8080/products/
