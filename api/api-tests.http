@@ -1,10 +1,9 @@
 ###Post request to the DB
-POST http://localhost:8080/login
+POST http://localhost:8080/users/login
 Content-Type: application/json
 
 {
-   
-    "email": "alex@gmail.com",
+    "username":"mahi",
     "password": "test123"
 }
 
