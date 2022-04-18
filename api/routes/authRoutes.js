@@ -49,8 +49,9 @@ async function registerUser(req, res) {
             process.env.JWT_SEC,
             { expiresIn: '3d' }
         );
-          const { password, ...others } = user._doc;
-         res.status(200).json({...others, accessToken});
+        const { password, ...others } = user._doc;
+        res.status(200).json({...others, accessToken});
+       
     } catch (error) {
         res.status(500).json(error);
     }
