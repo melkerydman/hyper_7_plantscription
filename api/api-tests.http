@@ -1,13 +1,22 @@
 ###Post request to the DB
-POST http://localhost:8080/users/login
+POST http://localhost:8080/users
 Content-Type: application/json
 
 {
 
-    "username":"mahi5",   
+    "username":"mahi5",
+    "email": "mahi@gmail.com",
     "password": "test123"
 }
 
+###POST request to user login
+POST http://localhost:8080/users/login
+Content-Type: application/json
+
+{
+   "username":"mahi5",
+   "password": "test123"
+}
 
 ###GET request to the DB
 GET http://localhost:8080/
