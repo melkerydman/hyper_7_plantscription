@@ -8,8 +8,10 @@ async function registerUser(req, res) {
         const newUser = await User.create({
             username: req.body.username,
             email: req.body.email,
-            password: CryptoJS.AES.encrypt (
-                req.body.password, process.env.PASS_SEC,).toString(),
+            password: CryptoJS.AES.encrypt(
+                req.body.password,
+                process.env.PASS_SEC
+            ).toString(),
         });
 
         res.status(200).json({
@@ -24,23 +26,22 @@ async function registerUser(req, res) {
     }
 }
 
- async function userLogin(req, res) {
+async function userLogin(req, res) {
     try {
         const user = await User.findOne({
-            username: req.body.username
+            username: req.body.username,
         });
-           !user && res.status(401).json('first error wronge inpute');
+        !user && res.status(401).json('User not found!');
 
         const hashedPassword = CryptoJS.AES.decrypt(
             user.password,
             process.env.PASS_SEC
-         );
-         const DefinedPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
+        );
+        const definedPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
 
-        DefinedPassword !== req.body.password &&
-        res.status(401).json('password does not match');        
-/////////JWT is created to make our registeration and login process more secure////
-// comment to be deleted later
+        definedPassword !== req.body.password &&
+            res.status(401).json('password does not match');
+        /////////JWT is created to make our registeration and login process more secure////
         const accessToken = jwt.sign(
             {
                 id: user._id,
@@ -49,13 +50,13 @@ async function registerUser(req, res) {
             process.env.JWT_SEC,
             { expiresIn: '3d' }
         );
+        // we keep the jwt until it creates a problem on the frontend remember to remove the jwt
         const { password, ...others } = user._doc;
-        res.status(200).json({...others, accessToken});
-       
+        res.status(200).json({ ...others, accessToken});
     } catch (error) {
         res.status(500).json(error);
     }
- }
+}
 
 // Routes
 const authRoutes = express.Router();
