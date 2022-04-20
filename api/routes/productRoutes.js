@@ -20,7 +20,7 @@ async function createProduct(req, res) {
         });
     } catch (err) {
         console.log('Something went wrong creating a product', err.message);
-        res.sendStatus(420);
+        res.status(420).json(err);
     }
 }
 
@@ -28,11 +28,11 @@ async function createProduct(req, res) {
 async function getProduct(req, res) {
     try {
         const product = await Product.findById(req.params.id);
-        res.json(product);
+        res.status(200).json(product);
         console.log(product);
     } catch (err) {
         console.log('Something went wrong fetching the product', err.message);
-        res.sendStatus(500);
+        res.status(500).json(err);
     }
 }
 
@@ -40,11 +40,11 @@ async function getProduct(req, res) {
 async function getAllProducts(req, res) {
     try {
         const products = await Product.find();
-        res.json(products);
+        res.status(200).json(products);
         console.log(products);
     } catch (err) {
         console.log('Something went wrong fetching all products', err.message);
-        res.sendStatus(500);
+        res.status(500).json(err);
     }
 }
 
