@@ -1,4 +1,26 @@
-###Post request to the DB
+// PRODUCT ROUTES
+
+### Push a new product to the DB
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{
+    "title": "New flower",
+    "desc": "A flower that shall pass like us at hyper",
+    "img": "www.google.com",
+    "cat": [],
+    "price": 1
+}
+
+### GET ONE PRODUCT
+GET http://localhost:8080/products/6257ea5c4dabb30c8ac49069
+
+### GET All PRODCUTS
+GET http://localhost:8080/products/
+
+// AUTH ROUTES
+
+### REGISTER USER
 POST http://localhost:8080/users
 Content-Type: application/json
 
@@ -9,7 +31,7 @@ Content-Type: application/json
     "password": "test123"
 }
 
-###POST request to user login
+### LOGIN USER
 POST http://localhost:8080/users/login
 Content-Type: application/json
 
@@ -17,6 +39,3 @@ Content-Type: application/json
    "username":"mahi5",
    "password": "test123"
 }
-
-###GET request to the DB
-GET http://localhost:8080/
