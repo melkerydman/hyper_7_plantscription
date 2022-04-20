@@ -37,6 +37,9 @@ async function getProduct(req, res) {
 }
 
 // GET ALL PRODUCTS
+
+//TODO Add filter function
+
 async function getAllProducts(req, res) {
     try {
         const products = await Product.find();
