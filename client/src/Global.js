@@ -2,7 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
 	:root {
-	--primary-color: blue;
+	--primary-color: grey;
+	--primary-text: white;
 	}
 
 	* {
@@ -13,5 +14,11 @@ export default createGlobalStyle`
 
 	html{
 		font-size: 62.5%;
+		color: var(--primary-text)
+	}
+	
+	a {
+		text-decoration: none;
+		color: var(--primary-text)
 	}
 `;
