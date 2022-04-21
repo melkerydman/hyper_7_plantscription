@@ -31,28 +31,38 @@ async function userLogin(req, res) {
         const user = await User.findOne({
             username: req.body.username,
         });
-        !user && res.status(401).json('User not found!');
 
-        const hashedPassword = CryptoJS.AES.decrypt(
-            user.password,
-            process.env.PASS_SEC
-        );
-        const definedPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
+        if (user) {
+            const hashedPassword = CryptoJS.AES.decrypt(
+                user.password,
+                process.env.PASS_SEC
+            );
+            const { password, ...others } = user._doc;
+            const definedPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
+            definedPassword === req.body.password;
 
-        definedPassword !== req.body.password &&
-            res.status(401).json('password does not match');
-        /////////JWT is created to make our registeration and login process more secure////
-        const accessToken = jwt.sign(
-            {
-                id: user._id,
-                isAdmin: user.isAdmin,
-            },
-            process.env.JWT_SEC,
-            { expiresIn: '3d' }
-        );
-        // we keep the jwt until it creates a problem on the frontend remember to remove the jwt
-        const { password, ...others } = user._doc;
-        res.status(200).json({ ...others, accessToken});
+            if (definedPassword === req.body.password) {
+                return res.status(200).json({ ...others });
+            } else {
+                return res.status(401).json('Incorrect password');
+            }
+        } else {
+            return res.status(401).json('User not found');
+        }
+
+        // definedPassword !== req.body.password &&
+        //     res.status(401).json('Password does not match');
+        // /////////JWT is created to make our registeration and login process more secure////
+        // // const accessToken = jwt.sign(
+        // //     {
+        // //         id: user._id,
+        // //         isAdmin: user.isAdmin,
+        // //     },
+        // //     process.env.JWT_SEC,
+        // //     { expiresIn: '3d' }
+        // // );
+        // // // we keep the jwt until it creates a problem on the frontend remember to remove the jwt
+        // res.status(200).json({ ...others, accessToken});
     } catch (error) {
         res.status(500).json(error);
     }

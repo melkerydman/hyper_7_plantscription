@@ -15,7 +15,8 @@ const Login = () => {
                 password: password.value,
             }),
         });
-        console.log(loginUser);
+        const json = await loginUser.json();
+        console.log(json);
     };
 
     // 		POST http://localhost:8080/users/login
@@ -29,7 +30,7 @@ const Login = () => {
     return (
         <main>
             <h2>Login</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input
                     type="text"
                     id="username"
@@ -42,7 +43,7 @@ const Login = () => {
                     name="password"
                     placeholder="Password"
                 />
-                <button onClick={handleSubmit}>Sign in</button>
+                <button>Sign in</button>
             </form>
         </main>
     );
