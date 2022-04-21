@@ -9,6 +9,12 @@ export const Nav = styled.nav`
     margin: 0 auto;
     gap: 2.4rem;
     padding: 1.2rem 2.4rem;
+
+    color: var(--secondary-text);
+
+    a {
+        color: var(--secondary-text);
+    }
 `;
 
 export const Logo = styled.a``;

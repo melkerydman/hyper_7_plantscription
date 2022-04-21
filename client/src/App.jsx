@@ -4,7 +4,7 @@ import GlobalStyle from './Global';
 import { Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 
-function App() {
+const App = () => {
     return (
         <div className="App">
             <GlobalStyle />
@@ -15,6 +15,6 @@ function App() {
             </Routes>
         </div>
     );
-}
+};
 
 export default App;
