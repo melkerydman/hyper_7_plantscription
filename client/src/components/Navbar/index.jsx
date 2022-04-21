@@ -1,21 +1,33 @@
-import { Nav, Logo, Links, Link } from './styled';
+import SearchBar from '../SearchBar';
+import { Nav, Logo, Links, Link, Left, Middle, Right } from './styled';
 
-const Navbar = ({ children }) => {
+const Navbar = () => {
     return (
         <Nav>
-            <Links>
-                <Link>
-                    <a href="/">Home</a>
-                </Link>
-                <Link>
-                    <a href="/">About</a>
-                </Link>
-                <Link>
-                    <a href="/">Contact</a>
-                </Link>
-            </Links>
-            <Logo>Larry's Cactus Pub</Logo>
-            {children}
+            <Left>
+                <Logo>Larry's Cactus Pub</Logo>
+                <Links>
+                    <Link>
+                        <a href="/">Subscribe</a>
+                    </Link>
+                    <Link>
+                        <a href="/">Shop</a>
+                    </Link>
+                </Links>
+            </Left>
+            <Middle>
+                <SearchBar />
+            </Middle>
+            <Right>
+                <Links>
+                    <Link>
+                        <a href="/">Login</a>
+                    </Link>
+                    <Link>
+                        <a href="/">Cart</a>
+                    </Link>
+                </Links>
+            </Right>
         </Nav>
     );
 };
