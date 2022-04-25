@@ -1,8 +1,9 @@
 import './App.css';
-import { Navbar, Products } from './components';
+import { Navbar } from './components';
 import GlobalStyle from './Global';
 import { Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
+import Products from './pages/ProductsPage';
 
 const App = () => {
     return (
