@@ -26,6 +26,7 @@ const Product = (props) => {
     const [quantity, setQuantity] = useState(1);
 
     // TODO Fix issue with multiple re-renders that causes fetching of product multiple times
+    // TODO Handle error when fetching incorrect id - currently doesn't work as intended- maybe the backend doesn't pass an error?
 
     useEffect(() => {
         const getProduct = async () => {
@@ -50,12 +51,12 @@ const Product = (props) => {
         }
     }, [id, product]);
 
+    console.log(product);
+    // Function handles increment or decrement based on passed type and current quantity
+    // If type = dec - decrement quantity by one
+    // If type != dec - increase quantity by one
+    // Note: Quantity will never go below 0
     const handleQuantity = (type) => {
-        // Function handles increment or decrement based on passed type and current quantity
-        // If type = dec - decrement quantity by one
-        // If type != dec - increase quantity by one
-        // Note: Quantity will never go below 0
-
         if (type === 'dec') {
             quantity > 1 && setQuantity(quantity - 1);
         } else {
@@ -67,7 +68,7 @@ const Product = (props) => {
         <Main>
             <Wrapper>
                 <Container>
-                    <Image src="https://images.unsplash.com/photo-1589944908960-f6c10e05e4b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80" />
+                    <Image src={product.img} />
                 </Container>
                 <Container>
                     <ProductInfoContainer>
