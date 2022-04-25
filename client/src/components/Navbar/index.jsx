@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom';
 import SearchBar from '../SearchBar';
-import { Nav, Logo, Links, Link, Left, Middle, Right } from './styled';
+import { Nav, Logo, Links, StyledLink, Left, Middle, Right } from './styled';
 
 const Navbar = () => {
     return (
@@ -7,12 +8,12 @@ const Navbar = () => {
             <Left>
                 <Logo>Larry's Cactus Pub</Logo>
                 <Links>
-                    <Link>
-                        <a href="/">Subscribe</a>
-                    </Link>
-                    <Link>
-                        <a href="/">Shop</a>
-                    </Link>
+                    <StyledLink>
+                        <Link to="/">Subscribe</Link>
+                    </StyledLink>
+                    <StyledLink>
+                        <Link to="/">Shop</Link>
+                    </StyledLink>
                 </Links>
             </Left>
             <Middle>
@@ -20,12 +21,12 @@ const Navbar = () => {
             </Middle>
             <Right>
                 <Links>
-                    <Link>
-                        <a href="/">Login</a>
-                    </Link>
-                    <Link>
-                        <a href="/">Cart</a>
-                    </Link>
+                    <StyledLink>
+                        <Link to="/login">Login</Link>
+                    </StyledLink>
+                    <StyledLink>
+                        <Link to="/">Cart</Link>
+                    </StyledLink>
                 </Links>
             </Right>
         </Nav>

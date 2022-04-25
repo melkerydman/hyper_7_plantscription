@@ -25,7 +25,7 @@ export const Links = styled.ul`
     list-style-type: none;
 `;
 
-export const Link = styled.li``;
+export const StyledLink = styled.li``;
 
 export const Left = styled.div`
     display: flex;
