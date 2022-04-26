@@ -1,5 +1,5 @@
 import './App.css';
-import { Navbar } from './components';
+import { Navbar, Footer } from './components';
 import GlobalStyle from './Global';
 import { Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
@@ -13,6 +13,7 @@ const App = () => {
                 <Route path="/login" element={<Login />} />
                 <Route path="/" />
             </Routes>
+            <Footer />
         </div>
     );
 };
