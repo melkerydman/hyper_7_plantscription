@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { FaCartPlus } from 'react-icons/fa';
 
@@ -13,6 +14,7 @@ import {
 } from './styled';
 
 const Product = () => {
+    let navigate = useNavigate();
     const [products, setProduct] = useState([]);
 
     useEffect(() => {
@@ -31,7 +33,7 @@ const Product = () => {
         getProduct();
     }, []);
 
-    console.log(products);
+    console.log('products: ', products);
     // check if the products exists
     if (products) {
         return (
@@ -42,7 +44,8 @@ const Product = () => {
                     <Wrapper key={index}>
                         <Image
                             onClick={() => {
-                                console.log('Go to product');
+                                console.log('Go to product: ', item._id);
+                                navigate(`./${item._id}`);
                             }}
                             src={item.img}
                         />

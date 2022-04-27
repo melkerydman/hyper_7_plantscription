@@ -30,12 +30,12 @@ export const Image = styled.img`
 `;
 export const Details = styled.div`
     position: relative;
-    margin-top: 30px;
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 1rem;
     height: 20%;
     background-color: #7ee8fa;
     background-image: linear-gradient(315deg, #7ee8fa 0%, #80ff72 74%);
@@ -45,23 +45,23 @@ export const Details = styled.div`
 export const Icon2 = styled.div`
     position: absolute;
     bottom: 20%;
-    right: 10px;
-    font-size: 34px;
+    right: 1rem;
+    font-size: 3.4rem;
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    gap: 10px;
+    gap: 1rem;
     &:hover {
         transition: 0.3s all ease-in-out;
 
-        font-size: 39px;
+        font-size: 3.9rem;
     }
 `;
 export const Price = styled.div`
-    font-size: 24px;
+    font-size: 1.8rem;
 `;
 export const Title = styled.div`
-    font-size: 34px;
+    font-size: 2.4rem;
 `;
 
 // export const Image = styled.img``;
