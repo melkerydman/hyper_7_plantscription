@@ -15,8 +15,9 @@ const addItemtoCart= async (req,res)=>{
   
     let cart = await Cart.findOne({userId:userId}); 
    
+   
     const prodcutDetails= await Product.findOne ({productId:productId})
-    console.log(prodcutDetails,"😍😍😍😍" )
+    
     // check if the cart exists 
     if(cart){
       console.log("hello")
@@ -36,7 +37,7 @@ const addItemtoCart= async (req,res)=>{
 
         // if quanity exists, add the item in the arrary
       }else if (quantity>0 ){
-        const b  = cart.items
+        
         
         cart.items.push({
           productId:productId,
@@ -44,17 +45,18 @@ const addItemtoCart= async (req,res)=>{
           price:prodcutDetails.price,
           total: parseInt(prodcutDetails.price*quantity)
         })
-        console.log(cart.items, "found❤️❤️❤️")
+       
         cart.subTotal = cart.items.map(item=>item.total).reduce((acc,curr)=>acc+curr);
       }else {
-        console.log("new",)
+       
         return res.status(400).json({
           code:400, 
           message:"invalid request "
         })
       }
-      const data = await cart.save();
+      var data = await cart.save();
     }else {
+      
       const cartData= {
         userId:userId, 
         items:[{
@@ -66,11 +68,12 @@ const addItemtoCart= async (req,res)=>{
         subTotal:parseInt(prodcutDetails.price*quantity)
       }
       cart = new Cart(cartData); 
-      const data= await cart.save()
+      data= await cart.save()
      
     }
     res.status(200).json({
       status:"scuess",
+      data:data
       
     })
   }catch(err){
@@ -84,9 +87,25 @@ const addItemtoCart= async (req,res)=>{
   
 
 }
-
+const getCart = async (req,res)=>{
+try {
+  const cart = await Cart.find()
+  res.status(200).json({
+    status:"sucess", 
+    data:cart
+  })
+  
+}catch(err){console.log(err)
+    res.status(400).json({
+      status:"failed",
+      message:err.message, 
+      err:err
+    })
+}
+}
 
 const cartRoutes = express.Router()
+cartRoutes.get('/getCart', getCart)
 cartRoutes.post('/addtocart', addItemtoCart)
 
 export default cartRoutes
