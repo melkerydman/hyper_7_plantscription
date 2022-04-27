@@ -1,44 +1,68 @@
-import { Main } from './styled';
-import { Products } from '../../ProductData';
-import Product from './product';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const AllProducts = () => {
-    const [products, setProducts] = useState([]);
+import { FaCartPlus } from 'react-icons/fa';
 
-    //  const getAllProducts = async () =>{
+import {
+    Wrapper,
+    Price,
+    Container,
+    Image,
+    Icon2,
+    Title,
+    Details,
+} from './styled';
 
-    //     const res = await fetch('http://localhost:8080/products');
-    //     console.log(res);
-
-    //  }
-    //  getAllProducts();
+const Product = () => {
+    const [products, setProduct] = useState([]);
 
     useEffect(() => {
-        const getProducts = async () => {
+        const getProduct = async () => {
             try {
-                const res = await fetch('http://localhost:8080/products');
-                const data = await res.json();
-
-                console.log(data);
-                // setProducts(data);
-            } catch (err) {}
+                const response = await fetch(`http://localhost:8080/products/`);
+                console.log('Fetched product');
+                const data = await response.json();
+                setProduct(data);
+            } catch (err) {
+                console.log(err);
+                console.log("Product couldn't be found.");
+            }
         };
-        getProducts();
+
+        getProduct();
     }, []);
 
-    return (
-        <Main>
-            {Products.map((item) => (
-                <Product item={item} key={item.id} />
-            ))}
-        </Main>
-    );
+    console.log(products);
+    // check if the products exists
+    if (products) {
+        return (
+            // map through the products , and disply each of the times
+            <Container>
+                {products.map((item, index) => (
+                    // was having an error that states that children needs a key , so we added the index key to wrapper
+                    <Wrapper key={index}>
+                        <Image
+                            onClick={() => {
+                                console.log('Go to product');
+                            }}
+                            src={item.img}
+                        />
+
+                        <Details>
+                            <Icon2
+                                onClick={() => {
+                                    console.log('Add clicked item to cart');
+                                }}
+                            >
+                                <FaCartPlus />
+                            </Icon2>
+                            <Title>{item.title ? item.title : 'product'}</Title>
+                            <Price>${item.price ? item.price : '$10.00'}</Price>
+                        </Details>
+                    </Wrapper>
+                ))}
+            </Container>
+        );
+    }
 };
 
-export default AllProducts;
-
-// we need a picture holder
-// we need the price
-// we need the name
-// we have the icons
+export default Product;

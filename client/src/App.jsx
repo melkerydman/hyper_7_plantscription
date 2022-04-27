@@ -2,7 +2,7 @@ import './App.css';
 import { Navbar, Footer } from './components';
 import GlobalStyle from './Global';
 import { Routes, Route } from 'react-router-dom';
-import { Login, Product } from './pages';
+import { Login, Product, Products } from './pages';
 
 const App = () => {
     return (
@@ -12,6 +12,7 @@ const App = () => {
             <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/products/:id" element={<Product />} />
+                <Route path="/products" element={<Products />} />
                 <Route path="/" />
             </Routes>
             <Footer />
