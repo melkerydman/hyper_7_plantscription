@@ -33,10 +33,10 @@ const Navbar = () => {
             <Right>
                 <Links>
                     <StyledLink>
-                        <Link to="/login">My Page</Link>
+                        <Link to="/login">Login</Link>
                     </StyledLink>
                     <StyledLink>
-                        <Link to="/login">Login</Link>
+                        <Link to="/register">Register</Link>
                     </StyledLink>
                     <StyledLink>
                         <Link to="/">
