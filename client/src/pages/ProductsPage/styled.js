@@ -2,26 +2,25 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     display: grid;
-
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 10rem;
-    // justify-items: center
-    margin: 0 10rem;
-    padding-top: 10rem;
+    gap: 5rem;
+
+    padding: 10rem;
 `;
 export const Wrapper = styled.div`
-    position: relative;
-
+    display: flex;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
-
+    height: 70rem;
     border-radius: 25px;
 `;
 
 export const Image = styled.img`
+    flex: 1;
     transition: all 0.3s;
     width: 100%;
-    height: 55%;
-
+    height: 70%;
     &:hover {
         transition: 1s all ease-in-out;
 
@@ -29,28 +28,24 @@ export const Image = styled.img`
     }
 `;
 export const Details = styled.div`
-    position: relative;
-    margin-top: 3rem;
     display: flex;
+    flex: 2;
+    margin-top: 7rem;
+    gap: 2rem;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    height: 20%;
-    background-color: #7ee8fa;
-    background-image: linear-gradient(315deg, #7ee8fa 0%, #80ff72 74%);
+    justify-content: flex-start;
+
+    // background-image: linear-gradient(315deg, #7ee8fa 0%, #80ff72 74%);
     color: #1e5c19;
 `;
 
 export const Icon2 = styled.div`
-    position: absolute;
-    bottom: 20%;
     right: 1rem;
     font-size: 3.4rem;
-    display: flex;
-    flex-direction: column;
+
     cursor: pointer;
-    gap: 1rem;
+
     &:hover {
         transition: 0.3s all ease-in-out;
 
@@ -63,7 +58,3 @@ export const Price = styled.div`
 export const Title = styled.div`
     font-size: 2.4rem;
 `;
-
-// export const Image = styled.img``;
-
-// export const Icon = styled.div``;

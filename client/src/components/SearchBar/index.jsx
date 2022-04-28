@@ -1,16 +1,13 @@
-import { Input, SearchContainer } from './styled';
-import { Search } from '@mui/icons-material';
+import { Input, SearchContainer, Icon } from './styled';
+import { FaSearch } from 'react-icons/fa';
 
 const SearchBar = () => {
     return (
         <SearchContainer>
             <Input placeholder="Search for a product" />
-            <Search
-                style={{
-                    color: 'grey',
-                    fontSize: '1.6rem',
-                }}
-            />
+            <Icon>
+                <FaSearch />
+            </Icon>
         </SearchContainer>
     );
 };

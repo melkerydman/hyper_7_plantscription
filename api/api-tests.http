@@ -5,12 +5,13 @@ POST http://localhost:8080/products
 Content-Type: application/json
 
 {
-    "title": "New flower",
+    "title": "Caculla one tree",
     "desc": "A flower that shall pass like us at hyper",
-    "img": "www.google.com",
+    "img": "https://i.ibb.co/P9t2PHV/plant3-1.png",
     "cat": [],
-    "price": 1
+    "price": 100
 }
+
 
 ### GET ONE PRODUCT
 GET http://localhost:8080/products/6257ea5c4dabb30c8ac49069
