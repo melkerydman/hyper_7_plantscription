@@ -54,7 +54,9 @@ export const Icon2 = styled.div`
 `;
 export const Price = styled.div`
     font-size: 1.8rem;
+    font-weight: 500;
 `;
 export const Title = styled.div`
     font-size: 2.4rem;
+    font-weight: 500;
 `;

@@ -14,8 +14,9 @@ export const Input = styled.input`
     flex: 1;
     border: none;
     background: none;
-    font-size: 3rem;
+    font-size: 2rem;
     border: none;
+    font-weight: 200;
 `;
 export const Icon = styled.h1`
     color: black;

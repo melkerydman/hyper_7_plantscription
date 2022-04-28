@@ -13,6 +13,18 @@ export const Nav = styled.nav`
         color: var(--primary-text);
         font-size: 3rem;
         text-transform: uppercase;
+        font-size: 2.5rem;
+        font-weight: 300;
+        cursor: pointer;
+        transition: 0.2s;
+        color: #020202;
+        letter-spacing: 2px;
+        &:hover {
+            color: #e8590c;
+            transform: scale(1.6);
+            text-decoration: underline;
+            text-underline-offset: 10px;
+        }
     }
 `;
 
