@@ -8,42 +8,33 @@ export const Nav = styled.nav`
     margin: 0 auto;
 
     color: var(--secondary-text);
-
-    a {
-        color: var(--primary-text);
-        font-size: 3rem;
-        text-transform: uppercase;
-        font-size: 2.5rem;
-        font-weight: 300;
-        cursor: pointer;
-        transition: 0.2s;
-        color: #020202;
-        letter-spacing: 2px;
-        &:hover {
-            color: #e8590c;
-            transform: scale(1.6);
-            text-decoration: underline;
-            text-underline-offset: 10px;
-        }
-    }
 `;
 
-export const Img = styled.img`
-    width: 35%;
-    margin-bottom: 5rem;
-`;
-export const Icon2 = styled.div``;
+export const Img = styled.img``;
+export const Icon = styled.div``;
 
 export const Links = styled.ul`
     display: flex;
     gap: 2.4rem;
     list-style-type: none;
-    var(--primary-text);
 `;
 
-export const StyledLink = styled.li``;
-export const Link = styled.li`
-var(--primary-text);
+export const StyledLink = styled.li`
+    color: var(--primary-text);
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 300;
+    cursor: pointer;
+    transition: 0.2s;
+    color: #020202;
+    letter-spacing: 2px;
+    &:hover {
+        color: #e8590c;
+
+        text-decoration: underline;
+        text-underline-offset: 10px;
+    }
 `;
 
 export const Left = styled.div`
