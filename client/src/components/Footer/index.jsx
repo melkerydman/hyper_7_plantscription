@@ -1,3 +1,7 @@
+import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import logo from '../../public/images/white_logo.png';
+
 import {
     Main,
     Left,
@@ -11,16 +15,16 @@ import {
     SocialMediaIcon,
     Connect,
 } from './styled';
-import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import logo from '../../public/images/white_logo.png';
 
 const Footer = () => {
     return (
         <Main>
             <Left>
-                <Img src={logo} alt="logo" />
+                <Link to="/">
+                    <Img src={logo} alt="logo" />
+                </Link>
             </Left>
+
             <Center>
                 <Links>
                     <StyledLink>

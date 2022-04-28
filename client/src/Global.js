@@ -5,7 +5,7 @@ export default createGlobalStyle`
 	--primary-color: grey;
 	--secondary-color: #F5F5F5;
 	--primary-text: #475F45;
-	--secondary-text: white;
+	--secondary-text: #fff;
 	}
 
 	* {

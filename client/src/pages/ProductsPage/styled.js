@@ -9,7 +9,6 @@ export const Container = styled.div`
 `;
 export const Wrapper = styled.div`
     display: flex;
-    display: flex;
     flex-direction: column;
     overflow: hidden;
     height: 70rem;
@@ -35,15 +34,12 @@ export const Details = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-
-    // background-image: linear-gradient(315deg, #7ee8fa 0%, #80ff72 74%);
-    color: #1e5c19;
 `;
 
 export const Icon2 = styled.div`
     right: 1rem;
     font-size: 3.4rem;
-
+    color: #80461b;
     cursor: pointer;
 
     &:hover {

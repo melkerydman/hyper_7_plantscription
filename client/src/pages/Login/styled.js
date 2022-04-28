@@ -5,7 +5,7 @@ export const Main = styled.main`
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    height: 70vh;
 `;
 export const Wrapper = styled.div`
     width: 25%;

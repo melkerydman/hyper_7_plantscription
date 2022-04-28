@@ -5,7 +5,7 @@ export const Main = styled.div`
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
+    height: 70vh;
 
     background: linear-gradient(
             rgba(255, 255, 255, 0.5),
