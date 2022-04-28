@@ -1,12 +1,23 @@
 import { Link } from 'react-router-dom';
 import SearchBar from '../SearchBar';
-import { Nav, Logo, Links, StyledLink, Left, Middle, Right } from './styled';
+import logo from '../../public/images/dark_logo.png';
+import {
+    Nav,
+    Img,
+    Links,
+    StyledLink,
+    Left,
+    Middle,
+    Right,
+    Icon2,
+} from './styled';
+import { FaCartPlus } from 'react-icons/fa';
 
 const Navbar = () => {
     return (
         <Nav>
             <Left>
-                <Logo>Larry's Cactus Pub</Logo>
+                <Img src={logo} alt="logo" />
                 <Links>
                     <StyledLink>
                         <Link to="/">Subscribe</Link>
@@ -22,10 +33,18 @@ const Navbar = () => {
             <Right>
                 <Links>
                     <StyledLink>
+                        <Link to="/login">My Page</Link>
+                    </StyledLink>
+                    <StyledLink>
                         <Link to="/login">Login</Link>
                     </StyledLink>
                     <StyledLink>
-                        <Link to="/">Cart</Link>
+                        <Link to="/">
+                            {' '}
+                            <Icon2>
+                                <FaCartPlus />
+                            </Icon2>
+                        </Link>
                     </StyledLink>
                 </Links>
             </Right>

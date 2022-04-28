@@ -51,6 +51,8 @@ const Product = () => {
                         />
 
                         <Details>
+                            <Title>{item.title ? item.title : 'product'}</Title>
+                            <Price>${item.price ? item.price : '$10.00'}</Price>
                             <Icon2
                                 onClick={() => {
                                     console.log('Add clicked item to cart');
@@ -58,8 +60,6 @@ const Product = () => {
                             >
                                 <FaCartPlus />
                             </Icon2>
-                            <Title>{item.title ? item.title : 'product'}</Title>
-                            <Price>${item.price ? item.price : '$10.00'}</Price>
                         </Details>
                     </Wrapper>
                 ))}
