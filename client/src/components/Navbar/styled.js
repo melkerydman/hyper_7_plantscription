@@ -8,6 +8,16 @@ export const Nav = styled.nav`
     margin: 0 auto;
 
     color: var(--secondary-text);
+    a {
+        color: #475f45;
+
+        &:hover {
+            color: #e8590c;
+
+            text-decoration: underline;
+            text-underline-offset: 10px;
+        }
+    }
 `;
 
 export const Img = styled.img`
@@ -21,7 +31,6 @@ export const Links = styled.ul`
     display: flex;
     gap: 2.4rem;
     list-style-type: none;
-    color: red;
 `;
 
 export const StyledLink = styled.li`
@@ -34,12 +43,6 @@ export const StyledLink = styled.li`
     transition: 0.2s;
 
     letter-spacing: 2px;
-    &:hover {
-        color: #e8590c;
-
-        text-decoration: underline;
-        text-underline-offset: 10px;
-    }
 `;
 
 export const Left = styled.div`
