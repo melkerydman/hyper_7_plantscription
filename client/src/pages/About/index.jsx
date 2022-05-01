@@ -1,6 +1,5 @@
 // import { useNavigate } from 'react-router-dom';
-import { Img, Main, Wrapper, Info, Header, H4, P } from './styled';
-import logo from '../../public/images/Dark Gray Minimalist Bonsai Shop Business Logo (2).png';
+import { Main, Wrapper, Info, Header, H4, P } from './styled';
 
 const About = () => {
     // const navigate = useNavigate();
@@ -12,13 +11,11 @@ const About = () => {
                 <Header>
                     <h2>ABOUT</h2>
                 </Header>
-
-                <Img src={logo} alt="logo" />
             </Wrapper>
             <Info>
                 <H4>
-                    Planteplaneter are small decorative “planets”, designed as
-                    an alternative to the ordinary houseplant.
+                    Maj home plants Lorem Ipsum abxbans, and agvds ertrbe beba
+                    wedere
                 </H4>
                 <P>
                     Lorem Ipsum is simply dummy text of the printing and

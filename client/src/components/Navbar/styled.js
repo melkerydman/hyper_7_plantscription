@@ -4,7 +4,7 @@ export const Nav = styled.nav`
     display: flex;
     align-items: center;
     height: 18rem;
-    background: #e5f2e5;
+    border-bottom: 1px solid #000;
     margin: 0 auto;
 
     color: var(--secondary-text);
@@ -53,11 +53,11 @@ export const Left = styled.div`
 export const Middle = styled.div`
     display: flex;
     align-items: center;
-    flex: 1.5;
+    flex: 1;
 `;
 export const Right = styled.div`
     display: flex;
-    flex: 1;
+    flex: 1.5;
     gap: 2.4rem;
     align-items: center;
     justify-content: center;
