@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Form, Input, Main, Wrapper } from './styled';
+import { Button, Form, Input, Main, Wrapper, Title } from './styled';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -50,7 +50,8 @@ const Login = () => {
     return (
         <Main>
             <Wrapper>
-                <h2>Login</h2>
+                <Title>LOGIN</Title>
+
                 <Form onSubmit={handleSubmit}>
                     <Input
                         type="text"

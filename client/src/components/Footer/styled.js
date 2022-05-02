@@ -22,7 +22,7 @@ export const Left = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 20px;
+    padding: 2rem;
 `;
 
 export const Center = styled.div`
@@ -34,7 +34,7 @@ export const Center = styled.div`
 `;
 
 export const Img = styled.img`
-    width: 30%;
+    width: 50%;
     margin-bottom: 5rem;
 `;
 
@@ -86,7 +86,7 @@ export const SocialMediaIcon = styled.h1`
 export const Box = styled.div`
     position: absolute;
     height: 4rem;
-    width: 90%;
+    width: 100%;
     background: #3d4a2e;
     bottom: 0;
     left: 0;
