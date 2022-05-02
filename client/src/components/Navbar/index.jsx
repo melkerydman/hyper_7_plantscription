@@ -9,7 +9,7 @@ import {
     Left,
     Middle,
     Right,
-    Icon2,
+    Icon,
 } from './styled';
 import { FaCartPlus } from 'react-icons/fa';
 
@@ -17,7 +17,10 @@ const Navbar = () => {
     return (
         <Nav>
             <Left>
-                <Img src={logo} alt="logo" />
+                <Link to="/">
+                    <Img src={logo} alt="logo" />
+                </Link>
+
                 <Links>
                     <StyledLink>
                         <Link to="/">Subscribe</Link>
@@ -33,17 +36,20 @@ const Navbar = () => {
             <Right>
                 <Links>
                     <StyledLink>
-                        <Link to="/login">My Page</Link>
+                        <Link to="/About">About</Link>
                     </StyledLink>
                     <StyledLink>
                         <Link to="/login">Login</Link>
                     </StyledLink>
                     <StyledLink>
+                        <Link to="/register">Register</Link>
+                    </StyledLink>
+                    <StyledLink>
                         <Link to="/">
                             {' '}
-                            <Icon2>
+                            <Icon>
                                 <FaCartPlus />
-                            </Icon2>
+                            </Icon>
                         </Link>
                     </StyledLink>
                 </Links>

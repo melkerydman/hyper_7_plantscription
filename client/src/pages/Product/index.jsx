@@ -7,12 +7,15 @@ import {
     Image,
     Button,
     Container,
+    Container1,
     Description,
     Main,
     Price,
     ProductInfoContainer,
     Title,
     Wrapper,
+    ImageWrap,
+    ImagesWrap,
 } from './styled';
 import { Add, Remove } from '@mui/icons-material';
 
@@ -67,23 +70,21 @@ const Product = (props) => {
     return (
         <Main>
             <Wrapper>
+                <Container1>
+                    <ImagesWrap>
+                        <Image src={product.img} />
+                        <Image src={product.img} />
+                        <Image src={product.img} />
+                    </ImagesWrap>
+                    <ImageWrap>
+                        <Image src={product.img} />
+                    </ImageWrap>
+                </Container1>
                 <Container>
-                    <Image src={product.img} />
-                </Container>
-                <Container>
-                    <ProductInfoContainer>
-                        <Title>
-                            {product.title ? product.title : 'Product Title'}
-                        </Title>
-                        <Description>
-                            {product.desc
-                                ? product.desc
-                                : 'Product Description'}
-                        </Description>
-                        <Price>
-                            Price {product.price ? product.price : '$10.00'}
-                        </Price>
-                    </ProductInfoContainer>
+                    <Title>
+                        {product.title ? product.title : 'Product Title'}
+                    </Title>
+                    <Price>$ {product.price ? product.price : '$10.00'}</Price>
                     <AddContainer>
                         <AmountContainer>
                             <Remove onClick={() => handleQuantity('dec')} />
@@ -92,6 +93,14 @@ const Product = (props) => {
                         </AmountContainer>
                         <Button>ADD TO CART</Button>
                     </AddContainer>
+
+                    <ProductInfoContainer>
+                        <Description>
+                            {product.desc
+                                ? product.desc
+                                : 'Product Description'}
+                        </Description>
+                    </ProductInfoContainer>
                 </Container>
             </Wrapper>
         </Main>
