@@ -31,6 +31,7 @@ export const Details = styled.div`
     flex: 2;
     margin-top: 7rem;
     gap: 2rem;
+
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -49,7 +50,7 @@ export const Icon2 = styled.div`
     }
 `;
 export const Price = styled.div`
-    font-size: 1.8rem;
+    font-size: 2.8rem;
     font-weight: 500;
     color: green;
 `;

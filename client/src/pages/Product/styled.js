@@ -101,7 +101,11 @@ export const Button = styled.button`
 `;
 
 export const Description = styled.h3`
-    margin: 2rem 0 0 2rem;
+    margin-top: 2rem;
+    padding-left: 2rem;
+    font-weight: 300;
+    font-size: 2.4rem;
+    line-height: 1.2;
 `;
 
 // <Wrapper>
