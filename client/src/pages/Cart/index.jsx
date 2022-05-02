@@ -2,34 +2,40 @@ import { Main, Title, Titles, Container, Wrapper, Left, Image, Details, ProductD
 import { useEffect, useState } from 'react';
 
 const Carts = () => {
-  const [products, setProduct] = useState([]);
+  const [carts, setCarts] = useState([]);
 
   useEffect(() => {
     const getCarts = async () => {
       try{
-        const res = await fetch(``)
+        const res = await fetch(`http://localhost:8080/carts/getCart`)
+        const data = await res.json();
+        console.log(data.data);
       }catch(error){
 console.log(error);
       }
     } 
-  })
+    getCarts();
+  }, []);
 
 
 
-  return (
-<Main>
+ return (
+  <Main>
+  <Title>ORDER SUMMARY</Title>
+  <Wrapper>
   
-<Title>ORDER SUMMARY</Title>
-<Wrapper>
-{products.map((item, index) =>(
-  <Left key={index}>
-  <Image src={item.img}/>
+    <Left>
+    <Image src=""/>
+  
+
+
+
   <Details>
     <Titles>A DEMO PLANT</Titles>
     <ProductDetail></ProductDetail>
   </Details>
 </Left>
-))}
+
     
   
     <Center>
@@ -50,10 +56,9 @@ console.log(error);
       <Total>Total: £36.50</Total>
         <Button>CHECKOUT NOW</Button>
   </Container>
-  
   </Main>
-
   )
+        
 }
 
-export default Carts
+export default Carts;

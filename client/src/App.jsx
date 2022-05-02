@@ -2,7 +2,7 @@ import './App.css';
 import { Navbar, Footer } from './components';
 import GlobalStyle from './Global';
 import { Routes, Route } from 'react-router-dom';
-import { Login, Product, Products, Register, About } from './pages';
+import { Login, Product, Products, Register, About, Carts } from './pages';
 
 const App = () => {
     return (
@@ -15,6 +15,7 @@ const App = () => {
                 <Route path="/register" element={<Register />} />
                 <Route path="/products/:id" element={<Product />} />
                 <Route path="/products" element={<Products />} />
+                <Route path="/carts" element={<Carts />} />
                 <Route path="/" />
             </Routes>
             <Footer />

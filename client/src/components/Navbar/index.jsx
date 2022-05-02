@@ -45,8 +45,7 @@ const Navbar = () => {
                         <Link to="/register">Register</Link>
                     </StyledLink>
                     <StyledLink>
-                        <Link to="/">
-                            {' '}
+                        <Link to="/carts">
                             <Icon>
                                 <FaCartPlus />
                             </Icon>
