@@ -50,7 +50,7 @@ export const H4 = styled.h4`
 `;
 export const P = styled.p`
     padding-left: 3rem;
-    height: 0%;
+
     font-size: 2.4rem;
     line-height: 1.5;
 `;
