@@ -1,6 +1,4 @@
 # hyper_7_plantscription
-Plant subscription e-com | Hyper Island, Module 7 - Code and Collaborate
-
 The brief for module 7 at Hyper Island - Code and Collaborate. A module focused on team work and agile methods, while creating an e-commerce site.
 
 ### :briefcase: Brief
