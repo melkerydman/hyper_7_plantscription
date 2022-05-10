@@ -15,6 +15,18 @@ Create an e-commerce - while utilising agile and SCRUM methodology.
 
 We set the main goal as a team to focus on the process of working as a team, rather than the end result. This was definitely my main personal focus and goal as well.
 
+### :computer: Tech and Tools
+
+- MongoDB
+- Mongoose
+- Express
+- React
+- Node
+- Styled-components
+- Git and GitHub
+- Trello
+- Netlify
+
 ### :fountain: Initial work, idea and planning
 
 We set up a shared environment and spent a lot of time initially to get everyone on-board with the structure. Setting up a Git workflow, prettier and rules for how to create things such as components.
@@ -40,15 +52,3 @@ I could make the list of learnings from this module a mile long, but some key ta
 - Set up a production path from the beginning. Having a sandbox the client can access from scratch saves you time, and potentially creates a deliverable faster.
 
 In general it’s been very rewarding working as a team an really applying the learnings from one week to our work the next.
-
-### :computer: Tech and Tools
-
-- MongoDB
-- Mongoose
-- Express
-- React
-- Node
-- Styled-components
-- Git and GitHub
-- Trello
-- Netlify
